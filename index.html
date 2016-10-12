@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<link rel="stylesheet" type="text/css" href="CSS/styles.css">
+			<title>
+				Adam Freeman Event Hosting
+			</title>
+			<script type="text/javascript">
+
+			//Just gonna make some helper functions here
+
+			function getPictures() {
+				pictures = document.getElementsByClassName('pic');
+			}
+
+			function removeActiveDot() {
+				dot = document.getElementsByClassName('active')[0]
+				dot.classList.remove('active')
+			}
+
+			function addActiveDot(picIndex) {
+				dot = document.getElementsByClassName('dot')[picIndex]
+				dot.classList.add('active')
+			}
+
+
+			window.onload = function () {
+
+			//Alerts if # dots and len pictures are not same
+				if (document.getElementsByClassName('pic').length != document.getElementsByClassName('dot').length) {
+					console.log('There are not the same amount of pictures and dots')
+				}
+				var pictures = document.getElementsByClassName('pic');
+				var picturesIndex = 0;
+				pictures[picturesIndex].style.display = "block"
+				var leftarrow = document.getElementById('leftarrow');
+				var rightarrow = document.getElementById('rightarrow');
+
+			// want to change pic on click, counting down
+				leftarrow.addEventListener('click', function(event) {
+					picture = document.getElementsByClassName('pic')[picturesIndex];
+					dot = document.getElementsByClassName('active')[0]
+					dot.classList.remove('active')
+					picture.style.display = "none"
+
+					picturesIndex--
+					if (picturesIndex == -1) {
+						picturesIndex = pictures.length - 1;
+					}
+
+					picture = document.getElementsByClassName('pic')[picturesIndex];
+					dot = document.getElementsByClassName('dot')[picturesIndex];
+					dot.classList.add('active');
+					picture.style.display = "block";
+				});
+
+				//want to change pic on click, counting up
+				rightarrow.addEventListener('click', function(event) {
+
+					picture = document.getElementsByClassName('pic')[picturesIndex];
+					dot = document.getElementsByClassName('active')[0]
+					dot.classList.remove('active')
+					picture.style.display = "none"
+					picturesIndex++
+
+					if (picturesIndex == (pictures.length)) {
+						picturesIndex = 0;
+					}
+
+					picture = document.getElementsByClassName('pic')[picturesIndex];
+					dot = document.getElementsByClassName('dot')[picturesIndex];
+					dot.classList.add('active');
+					picture.style.display = "block";
+				});
+
+			// This adds interactivity with the facebook logo
+				fblogo = document.getElementById('fb');
+
+				fblogo.addEventListener('mouseover', function(event) {
+					textarea = document.getElementById('checkout');
+					fblogo.style.backgroundColor = 'black'
+					textarea.innerHTML = ('Check me out on facebook!');
+				});
+				
+				fblogo.addEventListener('mouseout', function(event) {
+					textarea = document.getElementById('checkout');
+					textarea.innerHTML = ("");
+				});
+
+			}
+			</script>
+		</head>
+
+		<body>
+			<header>
+				<h1 class="title">
+					ADAM FREEMAN
+					<br>
+					PROFESSIONAL EVENT HOSTING
+				</h1>
+			</header>
+			<div class="navbar">
+				<ul>
+					<li class="nav">Home</li>
+					<li class="nav"><a href="about.html">About</a></li>
+					<li class="nav"><a href="contact.html">Contact</a></li>
+				</ul>
+			</div>
+			<hr style="border-color: black; width: 400px;">
+			<div class="main-body">
+				<div class="carousel">
+					<div id="leftpad">
+						<div id="leftarrow">
+							<div><|--</div>
+						</div>
+					</div>
+					<div id="pictureviewer">
+						<img src="IMAGES/dog.jpg" class="pic">
+						<img src="IMAGES/eagle.jpg" class="pic">
+						<img src="IMAGES/giraffe.jpg" class="pic">
+						<img src="IMAGES/trump.jpg" class="pic">
+						<!-- <p class="pic">Pic 1</p>
+						<p class="pic">Pic 2</p>
+						<p class="pic">Pic 3</p>
+						<p class="pic">Pic 4</p> -->
+					</div>
+					<div id="rightpad">
+						<div id="rightarrow">
+							<div>--|></div>
+						</div>
+					</div>
+				</div>
+				<br>
+				<div class="dotcontainer">
+					<span class="dot active"></span>
+					<span class="dot"></span>
+					<span class="dot"></span>
+					<span class="dot"></span>
+				</div>
+				<div class="events" style="text-align: center;">
+					<p><u>EVENTS</u></p>
+					<ul>
+						<li class="event">Put Stuff Here, you salty sea dog!</li>
+						<li class="event">And Here</li>
+					</ul>
+				</div>
+				<div class="main">
+					<p id="blurb">My name is Adam Freeman, and I'm a professional DJ/Event Host based in Michigan! Do you have a bar, club, private party, or wedding that you want to be hosted by a professional with experience? Well look no further, as I have professional experience in all of these areas of event hosting. Check out my <u>testimonials</u> page to see what my previous customers have had to say about my dazzling event hosting!</p>
+					<p id="gheader"><u>I've hosted events at these areas!</u></p>
+					<img src="http://maps.googleapis.com/maps/api/staticmap?size=375x260&sensor=false&markers=42.291707,-85.587229&markers=42.732535,-84.555535" id="gmaps">
+				</div>
+			</div>
+			<footer>
+				<div class="footerdiv">
+					<div class="soclogos">
+						<a href="http://www.facebook.com"><img src="IMAGES/fblogo.png" id="fb"></a>
+					</div>
+					<div id="checkout">
+					</div>
+					<div id="created">
+						Created by Kellan Martin
+					</div>
+				</div>
+			</footer>
+		</body>
+	</html>
