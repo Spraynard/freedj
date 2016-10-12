@@ -11,6 +11,7 @@
 
 			function getPictures() {
 				pictures = document.getElementsByClassName('pic');
+				return pictures;
 			}
 
 			function removeActiveDot() {
@@ -23,6 +24,15 @@
 				dot.classList.add('active')
 			}
 
+			function hideOldPic(picIndex) {
+				picture = document.getElementsByClassName('pic')[picIndex];
+				picture.style.display = "none";
+			}
+
+			function showCurrentPic(picIndex) {
+				picture = document.getElementsByClassName('pic')[picIndex];
+				picture.style.display = "block";
+			}
 
 			window.onload = function () {
 
@@ -30,47 +40,38 @@
 				if (document.getElementsByClassName('pic').length != document.getElementsByClassName('dot').length) {
 					console.log('There are not the same amount of pictures and dots')
 				}
-				var pictures = document.getElementsByClassName('pic');
+				var pictures = getPictures()
 				var picturesIndex = 0;
+		//display image at first load, block type
 				pictures[picturesIndex].style.display = "block"
 				var leftarrow = document.getElementById('leftarrow');
 				var rightarrow = document.getElementById('rightarrow');
 
 			// want to change pic on click, counting down
 				leftarrow.addEventListener('click', function(event) {
-					picture = document.getElementsByClassName('pic')[picturesIndex];
-					dot = document.getElementsByClassName('active')[0]
-					dot.classList.remove('active')
-					picture.style.display = "none"
+					removeActiveDot()
+					hideOldPic(picturesIndex);
 
 					picturesIndex--
 					if (picturesIndex == -1) {
 						picturesIndex = pictures.length - 1;
 					}
-
-					picture = document.getElementsByClassName('pic')[picturesIndex];
-					dot = document.getElementsByClassName('dot')[picturesIndex];
-					dot.classList.add('active');
-					picture.style.display = "block";
+					addActiveDot(picturesIndex);
+					showCurrentPic(picturesIndex);
 				});
 
 				//want to change pic on click, counting up
 				rightarrow.addEventListener('click', function(event) {
+					removeActiveDot();
+					hideOldPic(picturesIndex);
 
-					picture = document.getElementsByClassName('pic')[picturesIndex];
-					dot = document.getElementsByClassName('active')[0]
-					dot.classList.remove('active')
-					picture.style.display = "none"
 					picturesIndex++
-
 					if (picturesIndex == (pictures.length)) {
 						picturesIndex = 0;
 					}
 
-					picture = document.getElementsByClassName('pic')[picturesIndex];
-					dot = document.getElementsByClassName('dot')[picturesIndex];
-					dot.classList.add('active');
-					picture.style.display = "block";
+					addActiveDot(picturesIndex);
+					showCurrentPic(picturesIndex);
 				});
 
 			// This adds interactivity with the facebook logo
@@ -78,7 +79,6 @@
 
 				fblogo.addEventListener('mouseover', function(event) {
 					textarea = document.getElementById('checkout');
-					fblogo.style.backgroundColor = 'black'
 					textarea.innerHTML = ('Check me out on facebook!');
 				});
 				
@@ -86,20 +86,21 @@
 					textarea = document.getElementById('checkout');
 					textarea.innerHTML = ("");
 				});
-
 			}
 			</script>
 		</head>
 
 		<body>
 			<header>
-				<h1 class="title">
+				<h1 class="title" style="background-color: #3da2eb">
 					ADAM FREEMAN
 					<br>
 					PROFESSIONAL EVENT HOSTING
 				</h1>
 			</header>
-			<div class="navbar">
+			<br>
+			<!-- Adding hover functionality to fit with the rest of the front "HOME" page -->
+			<div class="navbar frontnavbar" style="background-color: #bec321;">
 				<ul>
 					<li class="nav">Home</li>
 					<li class="nav"><a href="about.html">About</a></li>
@@ -150,7 +151,7 @@
 					<img src="http://maps.googleapis.com/maps/api/staticmap?size=375x260&sensor=false&markers=42.291707,-85.587229&markers=42.732535,-84.555535" id="gmaps">
 				</div>
 			</div>
-			<footer>
+			<footer style="border-color:  #e2bd03">
 				<div class="footerdiv">
 					<div class="soclogos">
 						<a href="http://www.facebook.com"><img src="IMAGES/fblogo.png" id="fb"></a>

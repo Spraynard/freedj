@@ -17,8 +17,9 @@ ul {
 }
 
 html {
-	background-image:url('giphy.gif');
+	background-image:url('kiddancing.gif');
 	background-size: 700px, 700px;
+	background-position: 10%;
 	/* background-color:#075e89;*/
 }
 
@@ -37,10 +38,15 @@ footer {
 	height: 50px;
 	background-color: #fcda38;
 	box-shadow: 0px 0px 7px palegoldenrod;
+	margin-bottom: 50px;
 }
 
 .footerdiv {
 	height: 50px;
+}
+
+.notmain {
+	margin-top: 5px;
 }
 
 .navbar {
@@ -49,6 +55,10 @@ footer {
 	width: 30%;
 	margin: 0 auto;
 	background-color: white;
+}
+
+.frontnavbar:hover {
+	border: 4px solid black;
 }
 
 .navbar li {
@@ -65,7 +75,7 @@ footer {
 	display: absolute;
 	text-align: center;
 	float: left;
-	padding-top: 215px;
+	padding-top: 250px;
 	/*background-color: #075e89;*/
 }
 
@@ -80,13 +90,14 @@ footer {
 
 #leftarrow div {
 	margin-top: 12px;
+	color: white;
 }
 
 #pictureviewer {
-	height: 500px;
-	width: 500px;
-	border: 2px solid #e93f33;
-	margin-left: 30px;
+	height: 550px;
+	width: 550px;
+	border: 2px solid black;
+	margin-left: 10px;
 	float: left;
 	border-radius: 50%;
 }
@@ -96,8 +107,8 @@ footer {
 }
 .pic {
 	display: none;
-	height: 500px;
-	width: 500px;
+	height: 550px;
+	width: 550px;
 }
 
 .dot {
@@ -123,9 +134,9 @@ footer {
 #rightpad {
 	display: absolute;
 	text-align: center;
-	margin-left: 30px;
+	margin-left: 10px;
 	float: left;
-	padding-top: 215px;
+	padding-top: 250px;
 	/*background-color: #075e89;*/
 }
 
@@ -140,6 +151,7 @@ footer {
 
 #rightarrow div {
 	margin-top: 12px;
+	color: white;
 }
 
 .main-body {
@@ -228,11 +240,11 @@ footer {
 
 .soclogos img:hover {
 	box-sizing: border-box;
-	border: 3px solid black;
+	border: 2px solid black;
 }
 
 #fb {
-	margin-left: -2px;
+	background-color: black;
 }
 
 #checkout {
@@ -255,8 +267,9 @@ footer {
 	height: 500px;
 	width: 500px;
 	margin: 0 auto;
-	border: 5px solid red;
+	border: 2px solid black;
 	background-color: #4ebefb;
+	box-shadow: 0px 0px 7px palegoldenrod;
 }
 
 .bio .aboutbio {
@@ -264,3 +277,30 @@ footer {
 	text-indent: 2em;
 }
 
+.abouts {
+	background-color: #4ebefb;
+	box-shadow: 0px 0px 7px palegoldenrod;
+}
+
+.aboutfooter {
+	background-color: #4EBEFB;
+}
+/*Specifically "CONTACT" page css"*/
+
+.contacttitle {
+	background-color: #dbc498;
+}
+
+.contactbox {
+	box-sizing: border-box;
+	height: 300px;
+	width: 500px;
+	background-color: #dbc498;
+	border: 5px solid black;
+	margin: 0 auto;
+}
+
+.contact {
+	margin: 20px;
+	text-indent: 2em;
+}

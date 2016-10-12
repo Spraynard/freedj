@@ -1,24 +1,63 @@
 <!DOCTYPE html>
-	<html>
+	<html style="background-image: url('IMAGES/phoneconvo.gif');
+				 background-size: cover;">
 		<head>
 			<link rel="stylesheet" type="text/css" href="CSS/styles.css">
 			<title>
 				Adam Freeman - Contact
 			</title>
-			<script type="text/javascript">
+			<script>
+				window.onload = function() {
+					fblogo = document.getElementById('fb');
+
+					fblogo.addEventListener('mouseover', function(event) {
+						textarea = document.getElementById('checkout');
+						textarea.innerHTML = ('Check me out on facebook!');
+						fblogo.style.borderRight = "3px solid black";
+					});
+					
+					fblogo.addEventListener('mouseout', function(event) {
+						textarea = document.getElementById('checkout');
+						textarea.innerHTML = ("");
+						fblogo.style.borderRight = "none";
+					});
+				}
 			</script>
 		</head>
 
 		<body>
 			<header class="maintitle">
-				<h1>
-					ADAM FREEMAN - PROFESSIONAL EVENT HOSTING
+				<h1 class="title contacttitle">
+					ADAM FREEMAN
+					<br>
+					PROFESSIONAL EVENT HOSTING
 				</h1>
 			</header>
-			<div class="navbar">
+			<br>
+			<div class="navbar" style="background-color: #dbc498;">
 				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="contact.html">Contact</a></li>
+					<li class="nav"><a href="index.html">Home</a></li>
+					<li class="nav"><a href="about.html">About</a></li>
+					<li class="nav">Contact</a></li>
 				</ul>
 			</div>
+			<hr style="border-color: black; width: 400px;">
+			<div class="contactbox">
+				<div class="contact">
+					You can contact me at this location, at this address, and at this time. I swear though, if you contact me at another time that isn't at this location, address, or time. I will hunt you down and get ya.		
+				</div>
+			</div>
+			<footer class="notmain contacttitle">
+				<div class="footerdiv">
+					<div class="soclogos">
+						<a href="http://www.facebook.com"><img src="IMAGES/fblogo.png" id="fb"></a>
+					</div>
+					<div id="checkout">
+					</div>
+					<div id="created">
+						Created by Kellan Martin
+					</div>
+				</div>
+			</footer>
 		</body>
+	</html>

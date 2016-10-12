@@ -1,23 +1,40 @@
 <!DOCTYPE html>
-	<html>
+	<html style="background-image: url('IMAGES/giphy.gif');
+					 background-size: cover;">
 		<head>
 			<link rel="stylesheet" type="text/css" href="CSS/styles.css">
 			<title>
 				Adam Freeman - About
 			</title>
-			<script type="text/javascript">
+			<script>
+				window.onload = function() {
+					fblogo = document.getElementById('fb');
+
+					fblogo.addEventListener('mouseover', function(event) {
+						textarea = document.getElementById('checkout');
+						textarea.innerHTML = ('Check me out on facebook!');
+						fblogo.style.borderRight = "3px solid black"
+					});
+					
+					fblogo.addEventListener('mouseout', function(event) {
+						textarea = document.getElementById('checkout');
+						textarea.innerHTML = ("");
+						fblogo.style.borderRight = "none"
+					});
+				}
 			</script>
 		</head>
 
 		<body>
 			<header class="maintitle">
-				<h1 class="title">
+				<h1 class="title abouts">
 					ADAM FREEMAN
 					<br>
 					PROFESSIONAL EVENT HOSTING
 				</h1>
 			</header>
-			<div class="navbar">
+			<br>
+			<div class="navbar abouts">
 				<ul>
 					<li class="nav"><a href="index.html">Home</a></li>
 					<li class="nav">About</li>
@@ -30,4 +47,16 @@
 					Hello There. This is going to be a sentence about how cool I am and about I am the nicest most precious person ever. Thanks
 				</div>
 			</div>
+			<footer class="notmain aboutfooter">
+				<div class="footerdiv">
+					<div class="soclogos">
+						<a href="http://www.facebook.com"><img src="IMAGES/fblogo.png" id="fb"></a>
+					</div>
+					<div id="checkout">
+					</div>
+					<div id="created">
+						Created by Kellan Martin
+					</div>
+				</div>
+			</footer>
 		</body>
